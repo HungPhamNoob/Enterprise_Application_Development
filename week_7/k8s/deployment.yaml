@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-hihi
+  labels:
+    app: k8s-hihi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-hihi
+  template:
+    metadata:
+      labels:
+        app: k8s-hihi
+    spec:
+      initContainers:
+        - name: wait-for-mysql
+          image: busybox
+          command: ['sh', '-c', 'until nc -z mysql-service 3306; do echo waiting for mysql; sleep 5; done;']
+      containers:
+        - name: k8s-hihi
+          image: hunghung711/k8s-hihihi:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: "jdbc:mysql://mysql-service:3306/testdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"
+            - name: SPRING_DATASOURCE_USERNAME
+              value: "userapp"
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: "user1234"
+            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+              value: "update"
+            # THÊM DÒNG NÀY ĐỂ TẮT SECURITY TẠM THỜI
+            - name: SPRING_SECURITY_ENABLED
+              value: "false"
+
+          # SỬA PROBE - QUAN TRỌNG!
+          livenessProbe:
+            httpGet:
+              path: /api/  # Hoặc /api/ nếu không có actuator
+              port: 8080
+            initialDelaySeconds: 60  # Tăng thời gian chờ
+            periodSeconds: 15
+            failureThreshold: 3
+
+          readinessProbe:
+            httpGet:
+              path: /api/  # Hoặc /api/
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 3
