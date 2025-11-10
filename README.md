@@ -10,7 +10,7 @@ This repository contains **weekly assignments** for the **Business Application D
 - `week_6/`  → Docker and Kubernetes deployment demo
 - `week_7/`  → CI/CD with Github Action and ArgoCD demo
 - `week_8/`  → Mornitoring with Prometheus and Grafana demo 
-- `week_9/`  →
+- `week_9/`  → MongoDB Replication and Sharding
 - `week_10/` →
 
 > 💡 **Recommendation:**  
@@ -26,11 +26,14 @@ This repository contains **weekly assignments** for the **Business Application D
 - **Prometheus & Grafana** - Monitoring and visualization tools  
 - **Docker** - Containerization platform  
 - **Kubernetes** - Container orchestration  
-- **GitHub Actions & ArgoCD** - CI/CD automation and deployment  
+- **GitHub Actions & ArgoCD** - CI/CD automation and deployment
+- **MongoDB** – NoSQL database with **Replication** and **Sharding** for scalability and high availability  
 
 ## 🛠 Tools
 [![IntelliJ IDEA](https://img.shields.io/badge/IDE-IntelliJ%20IDEA-blue?logo=intellij-idea&logoColor=white)](https://www.jetbrains.com/idea/)  
 [![MySQL Workbench](https://img.shields.io/badge/Database-MySQL%20Workbench-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/products/workbench/)
+<br>
+[![MongoDB Compass](https://img.shields.io/badge/NoSQL-MongoDB%20Compass-47A248?logo=mongodb&logoColor=white)](https://www.mongodb.com/products/compass)
 <br>
 [![Postman](https://img.shields.io/badge/API%20Testing-Postman-FF6C37?logo=postman&logoColor=white)](https://www.postman.com/)
 <br>
