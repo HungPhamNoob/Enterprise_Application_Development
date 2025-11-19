@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  mongo1:
+    image: mongo:8.0
+    container_name: mongo-repl-mongo1
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--port", "27017"]
+    ports: ["27017:27017"]
+    volumes:
+      - ./data/repl/mongo1:/data/db
+
+  mongo2:
+    image: mongo:8.0
+    container_name: mongo-repl-mongo2
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--port", "27018"]
+    ports: ["27018:27018"]
+    volumes:
+      - ./data/repl/mongo2:/data/db
+
+  mongo3:
+    image: mongo:8.0
+    container_name: mongo-repl-mongo3
+    command: ["mongod", "--replSet", "rs0", "--bind_ip_all", "--port", "27019"]
+    ports: ["27019:27019"]
+    volumes:
+      - ./data/repl/mongo3:/data/db
