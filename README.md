@@ -13,14 +13,14 @@ This repository contains **weekly assignments** for the **Enterprise Application
 - `week_8/`  → Mornitoring with Prometheus and Grafana demo 
 - `week_9/`  → MongoDB Replication and Sharding demo
 - `week_10_1/` → Message broker using Kafka demo
-- `week_10_2/` →  demo
+- `week_10_2/` →  K8s Cloud Deployment demo
 
 > 💡 **Recommendation:**  
 > Use **IntelliJ IDEA** 🧑‍💻 for the best experience when exploring or reviewing the code.  
 > Open the folder that contains a `pom.xml` as a project to view or edit.
 
 ## 🔧 Technologies Used
-- **Spring Boot 3.2.2** - Application framework  
+- **Spring Boot 3.2.2** - Application framework
 - **Spring Security OAuth2** - OIDC client implementation  
 - **Thymeleaf** - Server-side templating  
 - **MySQL** - Database (optional for user data)  
@@ -54,4 +54,5 @@ This repository contains **weekly assignments** for the **Enterprise Application
 [![Grafana](https://img.shields.io/badge/Dashboard-Grafana-F46800?logo=grafana&logoColor=white)](https://grafana.com/)
 <br>
 [![Apache Kafka](https://img.shields.io/badge/Messaging-Apache%20Kafka-231F20?logo=apachekafka&logoColor=white)](https://kafka.apache.org/)
-
+<br>
+[![Google Cloud](https://img.shields.io/badge/Google%20Cloud-Platform-4285F4?logo=googlecloud&logoColor=white)](https://cloud.google.com)
